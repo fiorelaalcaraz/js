@@ -209,15 +209,15 @@
             //    error
             //  - La llamada debe ser asíncrona.
             //  - No te olvides de envíar el parámetro para que se cree la tarea.
-            let param = currentTask;
-            Ajax.sendPutRequest(API_URL + "/" + currentTask.id, param, MediaFormat.JSON, (value) => revertHTMLChangeOnEdit(value), (code) => showError(code, 'La tarea no ha podido ser editada.'), true);
+            Ajax.sendPutRequest(API_URL + "/" + currentTask.id, currentTask, MediaFormat.JSON, (value) => revertHTMLChangeOnEdit(value), (code) => showError(code, 'La tarea no ha podido ser editada.'), true);
         };
 
         let buttonCancel = document.createElement('button');
         buttonCancel.innerText = 'Cancel';
         buttonCancel.setAttribute('id', `cancel-button-${currentTask.id}`);
-        buttonCancel.onclick = () => revertHTMLChangeOnEdit(currentTask);
-
+        buttonCancel.onclick = () => {
+            Ajax.sendGetRequest(API_URL + "/" + currentTask.id, currentTask, MediaFormat.JSON, (value) => revertHTMLChangeOnEdit(value), (code) => showError(code, 'La tarea no ha podido ser editada.'), true);
+        }
         currentDOMTask.insertBefore(buttonCancel, currentDOMTask.children[0]);
         currentDOMTask.insertBefore(buttonOK, currentDOMTask.children[0]);
         currentDOMTask.insertBefore(inputText, currentDOMTask.children[0]);
