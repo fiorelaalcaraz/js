@@ -1,0 +1,129 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Tasks RESTful API",
+		"_postman_id": "ff494e85-f1d8-88ff-8e3f-884e8b728458",
+		"description": "A simple RESTful API for tasks management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/tasks",
+			"request": {
+				"url": "https://task-backend-fpuna.herokuapp.com/tasks",
+				"method": "OPTIONS",
+				"header": [],
+				"body": {},
+				"description": "Get the options of this endpoint"
+			},
+			"response": []
+		},
+		{
+			"name": "/tasks",
+			"request": {
+				"url": "https://task-backend-fpuna.herokuapp.com/tasks",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\":\"Terminar la tarea\"\n}"
+				},
+				"description": "REtrieve all tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "/tasks",
+			"request": {
+				"url": "https://task-backend-fpuna.herokuapp.com/tasks",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\":\"Terminar la tarea\"\n}"
+				},
+				"description": "Create a task"
+			},
+			"response": []
+		},
+		{
+			"name": "/tasks/:id",
+			"request": {
+				"url": "https://task-backend-fpuna.herokuapp.com/tasks/1",
+				"method": "OPTIONS",
+				"header": [],
+				"body": {},
+				"description": "Get the options of this endpoint"
+			},
+			"response": []
+		},
+		{
+			"name": "/tasks/:id",
+			"request": {
+				"url": "https://task-backend-fpuna.herokuapp.com/tasks/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\":\"Terminar la tarea\"\n}"
+				},
+				"description": "Retrieve a single task given its id"
+			},
+			"response": []
+		},
+		{
+			"name": "/tasks/:id",
+			"request": {
+				"url": "https://task-backend-fpuna.herokuapp.com/tasks/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"status\":\"TERMINADO\"\n}"
+				},
+				"description": "Updates a task, the status field could be `TERMINADO`, `CANCELADO`, `PENDIENTE`"
+			},
+			"response": []
+		},
+		{
+			"name": "/tasks/:id",
+			"request": {
+				"url": "https://task-backend-fpuna.herokuapp.com/tasks/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "Deletes a task"
+			},
+			"response": []
+		}
+	]
+}

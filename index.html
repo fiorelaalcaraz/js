@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO List App</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Tareas</h1>
+        <p>
+            <label for="new-task">Nueva Tarea</label>
+            <input id="new-task" type="text"><button class="add">Agregar</button>
+        </p>
+
+        <h2>Lista de Tareas Pendientes</h2>
+        <ul id="incomplete-tasks">
+
+
+        </ul>
+
+        <h2>Lista de Tareas Completadas</h2>
+        <ul id="completed-tasks">
+
+        </ul>
+    </div>
+    <p>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px"
+                src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                alt="¡CSS Válido!" >
+        </a>
+    </p>
+    <script type="text/javascript" src="js/ajax.js" async></script>
+    <script type="text/javascript" src="js/todolist.js" async></script>
+</body>
+</html>
